@@ -13,6 +13,6 @@ Example usage:
 
 import dbwrapper.db
 
-database = dbrapper.db.DBWrapper("database.sqlite")
+database = dbwrapper.db.DBWrapper("database.sqlite")
 database.execute("SQL commands here")
 database.close()
