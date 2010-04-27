@@ -1,1 +1,18 @@
 The package dbwrapper contains a simple, thread-safe wrapper for sqlite3.
+It runs a sqlite3.Connection in an own thread and passes SQL commands and
+results using queues.
+
+
+Author: Sven Festersen (sven@sven-festersen.de)
+Version: 1.0
+Date: 27 April 2010
+License: GPL
+
+
+Example usage:
+
+import dbwrapper.db
+
+database = dwrapper.db.DBWrapper("database.sqlite")
+database.execute("SQL commands here")
+database.close()
