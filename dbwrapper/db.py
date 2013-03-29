@@ -113,6 +113,12 @@ class DBWrapper(threading.Thread):
       return res
     return None
     
+  def __call__(self, cmd, params=tuple()):
+    """
+    Alias for the execute() method.
+    """
+    return self.execute(cmd, params)
+    
   def get_tables(self):
     """
     Returns a list of table names currently in the database.
