@@ -18,4 +18,4 @@ database("SQL commands here")
 database.close()
 
 
-For more examples, see test.py
+For more examples, see tests/test.py
