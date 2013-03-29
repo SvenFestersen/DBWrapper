@@ -1,8 +1,9 @@
 """
-Author: Sven Festersen (sven@sven-festersen.de)
-Version: 1.0
-Date: 27 April 2010
-License: GPL
+Author:      Sven Festersen (sven@sven-festersen.de)
+Version:     1.1
+Created:     27 April 2010
+Last Change: 29 March 2013
+License:     GPL
 
 This module contains a simple thread-safe wrapper for a sqlite3 database.
 """
