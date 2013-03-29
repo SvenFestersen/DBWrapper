@@ -3,9 +3,9 @@ It runs a sqlite3.Connection in an own thread and passes SQL commands and
 results using queues.
 
 
-Author: Sven Festersen (sven@sven-festersen.de)
-Version: 1.0
-Date: 27 April 2010
+Author:  Sven Festersen (sven@sven-festersen.de)
+Version: 1.1
+Date:    29 March 2013
 License: GPL
 
 
@@ -14,5 +14,8 @@ Example usage:
 import dbwrapper.db
 
 database = dbwrapper.db.DBWrapper("database.sqlite")
-database.execute("SQL commands here")
+database("SQL commands here")
 database.close()
+
+
+For more examples, see test.py
