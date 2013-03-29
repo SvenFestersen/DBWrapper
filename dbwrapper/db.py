@@ -12,9 +12,20 @@ import sqlite3
 import threading
 import time
 
+
 class DBWrapper(threading.Thread):
   
   def __init__(self, filename=":memory:", logger=None, log_level=logging.INFO):
+    """
+    Create a new DBWrapper instance. All parameters are optional.
+    
+    Parameters:
+      filename:   Path to the database file. If filename is ":memory:", the
+                  database is created in the RAM (default).
+      logger:     A Python logging.Logger instance or None (default).
+      log_level:  If the logger parameter is None, use this log_level to display
+                  log messages (default is logging.INFO).    
+    """
     super(DBWrapper, self).__init__()
     self._filename = filename
     self._queue = Queue.Queue()
@@ -25,7 +36,8 @@ class DBWrapper(threading.Thread):
       self._logger = logging.getLogger('DBWrapper')
       self._logger.setLevel(log_level)
       msg_handler = logging.StreamHandler()
-      msg_fmt = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+      fmt_str = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+      msg_fmt = logging.Formatter(fmt_str)
       msg_handler.setFormatter(msg_fmt)
       self._logger.addHandler(msg_handler)
       msg_handler.setLevel(log_level)
